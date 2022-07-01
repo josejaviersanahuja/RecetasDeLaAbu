@@ -17,15 +17,17 @@ const StackNavigatorHome = ({}: Props) => {
         name={allscreens[HOME]}
         component={Home}
         options={{
-          title: 'Home',
+          title: '',
           headerRight: () => <Exit style={styles.logoutBtnStyle} />,
+          headerTransparent: true,
         }}
       />
       <Stack.Screen
         name={allscreens[LOGIN]}
         component={Login}
         options={{
-          title: 'Login',
+          title: '',
+          headerTransparent: true,
         }}
       />
     </Stack.Navigator>
