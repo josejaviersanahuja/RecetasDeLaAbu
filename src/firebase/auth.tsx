@@ -20,6 +20,9 @@ export const OnAuthStateChange = (
 export const logout = () => {
   return auth()
     .signOut()
+    .then(() => {
+      console.log('loggoed out');
+    })
     .catch(err => {
       console.error(err);
     });
