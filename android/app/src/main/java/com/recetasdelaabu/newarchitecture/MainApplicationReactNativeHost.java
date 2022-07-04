@@ -1,4 +1,4 @@
-package com.recetasdelaabu.newarchitecture;
+package com.zitrojj.recetasdelaabu.newarchitecture;
 
 import android.app.Application;
 import androidx.annotation.NonNull;
@@ -19,9 +19,9 @@ import com.facebook.react.fabric.CoreComponentsRegistry;
 import com.facebook.react.fabric.EmptyReactNativeConfig;
 import com.facebook.react.fabric.FabricJSIModuleProvider;
 import com.facebook.react.uimanager.ViewManagerRegistry;
-import com.recetasdelaabu.BuildConfig;
-import com.recetasdelaabu.newarchitecture.components.MainComponentsRegistry;
-import com.recetasdelaabu.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
+import com.zitrojj.recetasdelaabu.BuildConfig;
+import com.zitrojj.recetasdelaabu.newarchitecture.components.MainComponentsRegistry;
+import com.zitrojj.recetasdelaabu.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
 import java.util.ArrayList;
 import java.util.List;
 

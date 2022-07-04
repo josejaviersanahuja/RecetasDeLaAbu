@@ -1,4 +1,4 @@
-package com.recetasdelaabu.newarchitecture.components;
+package com.zitrojj.recetasdelaabu.newarchitecture.components;
 
 import com.facebook.jni.HybridData;
 import com.facebook.proguard.annotations.DoNotStrip;
