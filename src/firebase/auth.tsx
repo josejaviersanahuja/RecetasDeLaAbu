@@ -14,7 +14,7 @@ GoogleSignin.configure({
 export const OnAuthStateChange = (
   setAuth: Dispatch<FirebaseAuthTypes.User | null>,
 ) => {
-  return auth().onAuthStateChanged(user => console.log(user));
+  return auth().onAuthStateChanged(user => setAuth(user));
 };
 
 export const logout = () => {
@@ -33,7 +33,7 @@ export const handleGoogleLogIn = () => {
 
   return GoogleSignin.signIn({loginHint: 'email'})
     .then(user => {
-      console.log(user);
+      // console.log(user);
       const googleCredential = auth.GoogleAuthProvider.credential(user.idToken);
       return auth().signInWithCredential(googleCredential);
     })
@@ -43,20 +43,25 @@ export const handleGoogleLogIn = () => {
 };
 
 export const handleFacebookLogIn = () => {
+  console.log('login fb1');
+
   return LoginManager.logInWithPermissions(['public_profile', 'email'])
     .then(loginResult => {
+      console.log('login fb2');
       if (loginResult.isCancelled) {
         throw 'User cancelled the login';
       }
       return AccessToken.getCurrentAccessToken();
     })
     .then(accesToken => {
+      console.log('login fb3');
       if (!accesToken) {
         throw 'Something went wrong withe acces token';
       }
       const facebookCredential = auth.FacebookAuthProvider.credential(
         accesToken.accessToken,
       );
+      console.log('login fb4');
       return auth().signInWithCredential(facebookCredential);
     })
     .catch(err => {

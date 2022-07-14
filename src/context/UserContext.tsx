@@ -47,6 +47,7 @@ export function AuthProvider({children}: Props) {
       //unsuscribe();
     };
   }, [auth, refresh]);
+  console.log(auth);
 
   const valueContext = {
     auth,

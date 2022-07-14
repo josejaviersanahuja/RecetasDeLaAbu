@@ -11,12 +11,15 @@ import 'react-native-gesture-handler';
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import DrawerNavigation from './src/navigation/DrawerNavigation';
+import {AuthProvider} from './src/context/UserContext';
 
 const App = () => {
   return (
-    <NavigationContainer>
-      <DrawerNavigation />
-    </NavigationContainer>
+    <AuthProvider>
+      <NavigationContainer>
+        <DrawerNavigation />
+      </NavigationContainer>
+    </AuthProvider>
   );
 };
 
