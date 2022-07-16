@@ -6,9 +6,10 @@ import React, {
   useState,
 } from 'react';
 import {OnAuthStateChange} from '../firebase/auth';
+import {UserContextType} from '../typescript/types';
 
 // @TODO replace todos los any
-const AuthContext = createContext<any>({
+const AuthContext = createContext<UserContextType>({
   auth: null,
   currentUser: null,
   setCurrentUser: () => {},
@@ -49,7 +50,7 @@ export function AuthProvider({children}: Props) {
   }, [auth, refresh]);
   console.log(auth);
 
-  const valueContext = {
+  const valueContext: UserContextType = {
     auth,
     currentUser,
     setCurrentUser,
