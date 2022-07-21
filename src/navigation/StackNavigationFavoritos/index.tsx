@@ -1,15 +1,18 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import Exit from '../../icons/Exit';
-import {StyleSheet} from 'react-native';
 import allscreens, {FAVORITOS} from '../../values/screenValues';
 import Favoritos from '../../screens/Favoritos';
+import LoginOrLogoutBtn from '../../components/LoginOrLogoutBtn';
+import {NavigationProp, RouteProp} from '@react-navigation/native';
 
 const Stack = createNativeStackNavigator();
 
-type Props = {};
+type Props = {
+  navigation: NavigationProp<any, any>;
+  route: RouteProp<any>;
+};
 
-const StackNavigatorFavoritos = ({}: Props) => {
+const StackNavigatorFavoritos = ({navigation}: Props) => {
   return (
     <Stack.Navigator>
       <Stack.Screen
@@ -17,7 +20,7 @@ const StackNavigatorFavoritos = ({}: Props) => {
         component={Favoritos}
         options={{
           title: '',
-          headerRight: () => <Exit style={styles.logoutBtnStyle} />,
+          headerRight: () => <LoginOrLogoutBtn navigation={navigation} />,
           headerTransparent: true,
         }}
       />
@@ -26,10 +29,3 @@ const StackNavigatorFavoritos = ({}: Props) => {
 };
 
 export default StackNavigatorFavoritos;
-
-const styles = StyleSheet.create({
-  logoutBtnStyle: {
-    color: '#000',
-    marginRight: 20,
-  },
-});
